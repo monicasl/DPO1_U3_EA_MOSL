@@ -1,5 +1,6 @@
 package com.unadm;
 
+import java.text.MessageFormat;
 import java.util.Scanner;
 
 public class Cliente extends Persona {
@@ -28,8 +29,12 @@ public class Cliente extends Persona {
 
     @Override
     public String mostrar() {
-        System.out.println("not implemented yet");
-        return "";
+        String template = "{1} {2}, {3}, {4}, {5}";
+        String msg = MessageFormat.format(template,
+                this.getNombre(), this.getApellido(),
+                this.getEdad(), this.getRFC(), this.getDireccion());
+        System.out.println(msg);
+        return msg;
     }
 
     @Override

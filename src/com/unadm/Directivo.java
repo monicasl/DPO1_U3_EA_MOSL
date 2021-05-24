@@ -1,5 +1,6 @@
 package com.unadm;
 
+import java.text.MessageFormat;
 import java.util.Scanner;
 
 public class Directivo extends Empleado {
@@ -7,7 +8,13 @@ public class Directivo extends Empleado {
 
     @Override
     public String mostrar() {
-        return null;
+        String template = "{0}. Directivo, {1} {2}, {3}, {4}, {}5";
+        String msg = MessageFormat.format(template,
+                this.getNumEmpleado(), this.getNombre(),
+                this.getApellido(), this.getEdad(),
+                this.getEmail(), this.getTelefono());
+        System.out.println(msg);
+        return msg;
     }
 
     public Directivo() {

@@ -1,5 +1,6 @@
 package com.unadm;
 
+import java.text.MessageFormat;
 import java.util.Scanner;
 
 public class Especialista extends Empleado{
@@ -7,7 +8,12 @@ public class Especialista extends Empleado{
 
     @Override
     public String mostrar() {
-        return null;
+        String template = "{0}. Especialista: {1} {2}, {3}, {4}, {5}";
+        String msg = MessageFormat.format(template,
+                this.getNumEmpleado(), this.getNombre(), this.getApellido(),
+                this.getEdad(), this.getEmail(), this.getTelefono());
+        System.out.println(msg);
+        return msg;
     }
 
     public Especialista() {
